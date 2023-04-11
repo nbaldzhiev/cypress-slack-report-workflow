@@ -10,3 +10,7 @@ of Cypress test results.
 * [mochawesome](https://www.npmjs.com/package/mochawesome) - provides an HTML report of the test results;
 * [mochawesome-report-generator](https://www.npmjs.com/package/mochawesome-report-generator) - allows for generating a unified Mochawesome report;
 * [mochawesome-merge](https://www.npmjs.com/package/mochawesome-merge) - allows for merging of multiple Mochawesome JSON reports into one.
+
+## Screenshots
+
+![Slack messages example screenshot](https://i.ibb.co/TgpFj1d/Screenshot-2023-04-11-at-17-29-59.png)
