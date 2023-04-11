@@ -1,0 +1,25 @@
+{
+  "name": "cypress-slack-report-workflow",
+  "version": "1.0.0",
+  "description": "Cypress slack results report via Github Actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nbaldzhiev/cypress-slack-report-workflow.git"
+  },
+  "author": "nenko.baldzhiev@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nbaldzhiev/cypress-slack-report-workflow/issues"
+  },
+  "homepage": "https://github.com/nbaldzhiev/cypress-slack-report-workflow#readme",
+  "devDependencies": {
+    "@slack/web-api": "^6.8.1",
+    "cypress": "^12.9.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0"
+  }
+}

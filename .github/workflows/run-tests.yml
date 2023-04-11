@@ -1,0 +1,30 @@
+name: Run Tests
+on: workflow_dispatch
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm ci
+      - name: Cypress run
+        run: NO_COLOR=1 npx cypress run --browser chrome --reporter mochawesome | tee cyOutput.txt
+      - name: Notify slack
+        if: always()
+        run: node slackNotify.js cyOutput.txt
+      - name: Create combined Mochawesome HTML report
+        run: |
+          npx mochawesome-merge cypress/reports/mochawesome/*.json > cypress/reports/report.json
+          npx marge cypress/reports/report.json
+      - name: Upload Mochawesome HTML report
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: mochawesome-html-report
+          path: mochawesome-report
+      - name: Upload Cypress Screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
