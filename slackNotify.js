@@ -10,6 +10,7 @@ const { WebClient } = require('@slack/web-api');
 
 const ghActionsRunID = process.env.GITHUB_RUN_ID;
 const ghActionsRunUrl = `https://github.com/your-project/actions/runs/${ghActionsRunID}`;
+// The below variables are expected to be set within the CI provider
 const qaSlackGroupId = process.env.SLACK_QA_GROUP_ID;
 const slackBotToken = process.env.SLACK_BOT_TOKEN;
 const slackChannelNameAll = process.env.SLACK_CHANNEL_NAME_ALL;

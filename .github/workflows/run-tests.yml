@@ -1,5 +1,13 @@
 name: Run Tests
+
 on: workflow_dispatch
+
+env:
+  SLACK_QA_GROUP_ID: your-slack-qa-group-id
+  SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+  SLACK_CHANNEL_NAME_ALL: your-slack-channel-name-all-results
+  SLACK_CHANNEL_NAME_FAILS: your-slack-channel-name-failures-only
+
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
