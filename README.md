@@ -4,6 +4,10 @@ A repository containing a GitHub Actions workflow and a Node.js script to send p
 Note that this repository doesn't include an actual Cypress project, but rather it can be integrated within your project to allow for Slack reporting 
 of Cypress test results.
 
+The GitHub Actions workflow runs on `workflow_dispatch` currently. It uploads the unified Mochawesome report as an artifact. This can be then 
+uploaded to some web server or a S3 bucket with enabled static webhosting so that the Mochawesome HTML report can be loaded directly on that 
+web server and linked in the Slack message as well.
+
 ## Packages used
 
 * [@slack/web-api](https://www.npmjs.com/package/@slack/web-api) - provides Slack's Web-API for Node.js;
